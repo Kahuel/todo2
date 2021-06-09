@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Form, List, Filter, Counter } from "./components";
+import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+export const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container style={{ padding: "50px 0px" }}>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
+            <Form />
+          </Col>
+        </Row>
+        <Row style={{ padding: "25px 0px 15px" }}>
+          <Col md={{ span: 3, offset: 3 }}>
+            <Filter />
+          </Col>
+          <Col md={"auto"}>
+            <Counter type={"in_progress"} />
+          </Col>
+          <Col md={"auto"}>
+            <Counter type={"complete"} />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
+            <List />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
-}
-
-export default App;
+};
