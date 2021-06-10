@@ -14,7 +14,7 @@ export const List: React.FC = () => {
   const dispatch = useDispatch();
   console.log(tasks);
   return (
-    <ListGroup>
+    <ListGroup style={{ overflowY: "auto", height: "77vh" }}>
       {filteredTasks.map((task: Task) => {
         return (
           <ListGroup.Item
